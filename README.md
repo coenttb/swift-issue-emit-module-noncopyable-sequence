@@ -1,5 +1,9 @@
 # Swift Emit-Module Bug: ~Copyable Constraint Propagation Failure with Sequence Conformance
 
+## Swift Issue
+
+Filed as [swiftlang/swift#86669](https://github.com/swiftlang/swift/issues/86669)
+
 ## Description
 
 The compiler fails during module emission (`-emit-module`) with the error "type 'Element' does not conform to protocol 'Copyable'" when a generic type with compound constraint (`Element: ~Copyable & Protocol`) has a nested type containing `UnsafeMutablePointer<Element>`, combined with conditional `Sequence` conformance and `borrowing Element` closures in extension files.
